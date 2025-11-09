@@ -1,0 +1,208 @@
+/* ------------------------------
+   🎨 Thème Post-it + Moderne
+------------------------------ */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f4fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 480px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1 {
+  text-align: center;
+  color: #6a11cb;
+  font-size: 1.8rem;
+}
+
+/* ------------------------------
+   🧾 Formulaire
+------------------------------ */
+form {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #6a11cb;
+}
+
+/* ------------------------------
+   🟣 Boutons
+------------------------------ */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+  align-self: center;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+/* ------------------------------
+   📋 Liste de tâches (Post-it)
+------------------------------ */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fff9c4;
+  border: 1px solid #f4e86b;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeIn 0.3s ease-in;
+  transform: rotate(calc(var(--rotate) * 1deg));
+}
+
+li:hover {
+  transform: scale(1.02) rotate(0deg);
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+li.completed {
+  background: #d1ffd7;
+  border-color: #8be69d;
+  color: #5f5f5f;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-action {
+  background: none;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+.btn-action:hover {
+  transform: scale(1.1);
+}
+
+.btn-done { color: #2e7d32; }
+.btn-edit { color: #1e88e5; }
+.btn-delete { color: #e53935; }
+
+/* ------------------------------
+   💬 Modale de modification
+------------------------------ */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.modal-content h3 {
+  color: #6a11cb;
+}
+
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#edit-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* ------------------------------
+   ✨ Animation
+------------------------------ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 500px) {
+  .app-container {
+    max-width: 90%;
+  }
+
+  li {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📝 Ma Liste de Tâches</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-container">
+    <h1>📒 Ma Liste de Tâches</h1>
+
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Ajouter une tâche..." required />
+      <button type="submit" class="btn-primary">➕ Ajouter</button>
+    </form>
+
+    <ul id="task-list"></ul>
+
+    <button id="clear-completed" class="btn-secondary">🧹 Effacer les tâches terminées</button>
+  </main>
+
+  <!-- 💬 Modale pour la modification -->
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>✏️ Modifier la tâche</h3>
+      <input type="text" id="edit-input" placeholder="Nouvelle description..." />
+      <div class="modal-actions">
+        <button id="save-edit" class="btn-primary">💾 Enregistrer</button>
+        <button id="cancel-edit" class="btn-secondary">❌ Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
