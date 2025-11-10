@@ -88,5 +88,6 @@ Même après un rechargement ou une fermeture de la page, ta liste reste intacte
 
 Ce projet est libre d’utilisation à des fins d’apprentissage et de démonstration.  
 Aucune attribution obligatoire, mais un crédit est toujours apprécié 💜
+
 ## 📄 Lien de l'application
 https://mokas2017.github.io/ws-ai-todo/
